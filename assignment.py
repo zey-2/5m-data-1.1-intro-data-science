@@ -15,7 +15,13 @@ def fizz_buzz(number):
     >>> fizz_buzz(15)
     'FizzBuzz'
     """
-    return
+    if number % 3 == 0 and number % 5 == 0:
+        return "FizzBuzz"
+    elif number % 3 == 0:   # Check if divisible by 3
+        return "Fizz"
+    elif number % 5 == 0:   # Check if divisible by 5
+        return "Buzz"
+    return number
 
 
 # Question 2
@@ -30,7 +36,8 @@ def sum_of_squares(numbers):
     >>> sum_of_squares([2, 4, 6])
     56
     """
-    return
+    return sum(x ** 2 for x in numbers)  # Using a generator expression to calculate the sum of squares
+
 
 
 # Question 3
@@ -45,7 +52,7 @@ def count_vowels(string):
     >>> count_vowels("aeiou")
     5
     """
-    return
+    return sum(1 for char in string if char in "aeiouAEIOU")
 
 
 # Question 4
@@ -54,13 +61,13 @@ def count_vowels(string):
 
 
 def count_repeats(string):
-    """Returns the number of repeated characters in a string.
+    """Returns the max repetition of repeated characters in a string. If there is no repetition, returns 0.
     >>> count_repeats("hello")
     2
     >>> count_repeats("aeiou")
     0
     """
-    return
+    return len([letter for letter in string if string.count(letter) > 1])
 
 
 if __name__ == "__main__":
